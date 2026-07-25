@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &mdash; Simple Heart Rate Monitor</title>
+<meta name="description" content="Support for Simple Heart Rate Monitor. The app requires an external Bluetooth heart rate sensor. Apple Watch does not work.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="bar">
+  <b>Simple Heart Rate Monitor</b>
+  <a href="privacy.html">Privacy policy</a>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <p class="eyebrow">Support</p>
+    <h1>Read the strap.<span>Nothing else.</span></h1>
+    <p class="lede">Most questions that reach this page have the same answer, so it is at the top.</p>
+  </header>
+
+  <div class="panel panel--alert">
+    <p class="panel-head"><i class="led"></i> Apple Watch does not work</p>
+    <p>Apple Watch does not broadcast heart rate as a standard Bluetooth sensor, so this app cannot see it. No setting, no update, and no permission changes that. <strong>If an Apple Watch is your only heart rate device, this app is not for you, and you should request a refund rather than leave it unused.</strong></p>
+    <p>Apps that send Apple Watch heart rate to a treadmill or bike computer broadcast it <em>from the iPhone</em>. iOS cannot receive its own Bluetooth, so running one of those alongside this app on the same phone does not help either.</p>
+  </div>
+
+  <div class="panel">
+    <p class="panel-head"><i class="led"></i> What you need</p>
+    <p>An external Bluetooth heart rate sensor: a chest strap, an armband, or a watch that broadcasts on the standard Bluetooth Heart Rate profile. The app displays what the sensor sends. It cannot measure your pulse on its own, and it does not estimate one from the camera.</p>
+  </div>
+
+  <section>
+    <h2>Sensors</h2>
+    <div class="split">
+      <div class="split-yes">
+        <h3>Works</h3>
+        <ul>
+          <li><b>Polar</b> H9, H10, Verity Sense, OH1</li>
+          <li><b>Garmin</b> HRM-Dual, HRM-Pro, HRM-Pro Plus, HRM 200, HRM-Fit</li>
+          <li><b>Wahoo</b> TICKR, TICKR X, TICKR FIT, TRACKR</li>
+          <li><b>Coospo</b> H6, H808S, HW9, HW807</li>
+          <li><b>Magene</b> H64, H303</li>
+          <li><b>Suunto</b> Smart Sensor</li>
+          <li><b>Decathlon</b> dual-band belts</li>
+          <li><b>Scosche</b> Rhythm 24, Rhythm+</li>
+          <li><b>WHOOP</b>, once broadcasting is enabled in the WHOOP app</li>
+          <li>Garmin and Polar watches with heart rate broadcast switched on</li>
+        </ul>
+      </div>
+      <div class="split-no">
+        <h3>Does not work</h3>
+        <ul>
+          <li><b>Apple Watch</b>, in any model or version</li>
+          <li><b>AirPods</b></li>
+          <li>Most <b>Fitbit</b> devices</li>
+          <li>ANT+ only straps, including Garmin <b>HRM-Run</b> and <b>HRM-Tri</b></li>
+          <li>Sleep and recovery rings such as <b>Oura</b></li>
+          <li>The phone camera, a fingertip, or the screen</li>
+          <li>Gym equipment and bike computers, which receive heart rate rather than send it</li>
+        </ul>
+      </div>
+    </div>
+    <p class="split-note">Not an exhaustive list. If your device's manual mentions broadcasting heart rate over Bluetooth, it will almost certainly work. If it does not mention it, it almost certainly will not.</p>
+  </section>
+
+  <section>
+    <h2>Questions</h2>
+    <div class="qa">
+
+      <div>
+        <p class="q">The app cannot find my sensor.</p>
+        <ol class="steps">
+          <li><b>Put the strap on.</b> Most straps only transmit while worn, and dry electrodes give nothing. Moisten the contact pads.</li>
+          <li><b>Disconnect it from everything else.</b> Nearly all straps accept one connection at a time. A paired watch, bike computer, or another app will hold the strap and make it invisible here.</li>
+          <li><b>Check the strap's battery.</b> A weak cell often advertises but never sends readings.</li>
+          <li><b>Turn Bluetooth on.</b> iOS gives no app a way to switch the radio on, so the app can only ask you to do it.</li>
+          <li><b>Let the search finish.</b> Each scan runs for fifteen seconds. Tap Connect again if the first pass comes up empty.</li>
+        </ol>
+      </div>
+
+      <div>
+        <p class="q">Nothing happens when I tap Connect.</p>
+        <p>Bluetooth permission was probably denied at some point, and iOS will not ask twice. Open Settings, find Simple Heart Rate Monitor in the app list, and switch Bluetooth on. Then tap Connect again.</p>
+      </div>
+
+      <div>
+        <p class="q">It connects, then drops out.</p>
+        <p>Usually electrode contact or range. Wet the pads, tighten the strap, and keep the phone within a few metres. The app retries five times on its own before giving up; tap Connect to start over. A failing strap battery causes the same pattern.</p>
+      </div>
+
+      <div>
+        <p class="q">It says Bluetooth pairing was lost.</p>
+        <p>The sensor forgot the phone, or the other way around. Open Settings, then Bluetooth, tap the info button beside the sensor, and choose Forget This Device. Then connect again from the app.</p>
+      </div>
+
+      <div>
+        <p class="q">My session was not saved.</p>
+        <p>Recordings shorter than one minute are discarded, deliberately, so a mistaken tap does not clutter your history. Recording also stops if the app is force quit or the phone restarts; it does not resume by itself.</p>
+      </div>
+
+      <div>
+        <p class="q">A message said recording stopped.</p>
+        <p>The app could not write to storage. Free up space and reconnect, which starts a fresh recording. Live readings keep working in the meantime.</p>
+      </div>
+
+      <div>
+        <p class="q">Where are my recordings kept?</p>
+        <p>In files inside the app on your phone. Nothing is uploaded anywhere. Export any session as CSV for a spreadsheet or PDF for reading, from the session's detail screen. Deleting the app deletes the recordings with it, so export anything you want to keep first.</p>
+      </div>
+
+      <div>
+        <p class="q">Can I bring sessions over from the Android version?</p>
+        <p>Yes. The file format is identical in both directions. Export from one, import into the other, single files or a ZIP of many.</p>
+      </div>
+
+      <div>
+        <p class="q">I cannot hear the spoken readings.</p>
+        <p>Raise the media volume rather than the ringer volume. Readings play through the media channel, which means they are audible even with the phone switched to silent. If headphones are connected, the audio follows them.</p>
+      </div>
+
+      <div>
+        <p class="q">How are the zones worked out?</p>
+        <p>The five zones begin at 50, 60, 70, 80, and 90 percent of your maximum heart rate. Enter a maximum between 100 and 230 directly, or let the app estimate one from your age and sex. The estimate uses 208 minus 0.7 times age for men and 206 minus 0.88 times age for women. Both are population averages and can sit well away from your real maximum.</p>
+        <p>If several consistent readings in one session climb above your current maximum, the app raises it. A single spike is ignored, so a moment of poor electrode contact will not distort your zones.</p>
+      </div>
+
+      <div>
+        <p class="q">Does it keep recording with the screen off?</p>
+        <p>Yes. Lock the phone and put it in a pocket. Readings, recording, and spoken announcements all continue.</p>
+      </div>
+
+      <div>
+        <p class="q">Is there an account, a subscription, or a cloud?</p>
+        <p>None of the three. The app contains no networking code at all, so there is nothing to sign in to and nowhere for your data to go. See the <a href="privacy.html">privacy policy</a>.</p>
+      </div>
+
+      <div>
+        <p class="q">What does it run on?</p>
+        <p>iPhone with iOS 17 or later. Available in English, German, Swiss German, French, Spanish, and Italian.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Bug reports, sensors that should work but do not, and anything else. Tell me your iPhone model, your iOS version, and the exact name of your sensor, and you will get a much faster answer.</p>
+      <p class="addr"><a href="mailto:REPLACE_WITH_YOUR_SUPPORT_EMAIL">REPLACE_WITH_YOUR_SUPPORT_EMAIL</a></p>
+    </div>
+  </section>
+
+  <div class="ramp"><i></i><i></i><i></i><i></i><i></i></div>
+
+</main>
+
+<footer>
+  <p class="meta">Simple Heart Rate Monitor &middot; iOS 1.0.1</p>
+  <p>A fitness and general wellness app. Not a medical device. Not intended to diagnose, treat, cure, or prevent any disease or condition, and not to be used for medical decisions. Seek medical attention for chest pain, breathlessness, dizziness, or an irregular heartbeat.</p>
+  <p>Not affiliated with Apple, Polar, Garmin, Wahoo, WHOOP, Coospo, Magene, Suunto, Scosche, Decathlon, Fitbit, or Oura. Product names are the trademarks of their respective owners and are listed only to describe sensor compatibility.</p>
+</footer>
+
+</body>
+</html>
