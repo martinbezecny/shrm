@@ -18,7 +18,7 @@
 <main>
 
   <header class="hero">
-    <p class="eyebrow">Privacy policy &middot; Android version 2.9</p>
+    <p class="eyebrow">Privacy policy &middot; Android version 3.0</p>
     <h1>Nothing leaves<span>your phone.</span></h1>
     <p class="lede">This is short because there is almost nothing to describe.</p>
   </header>
@@ -30,7 +30,8 @@
 
   <section>
     <h2>What the app collects</h2>
-    <p>Nothing. There is no account, no sign-in, no registration, and no profile. The app asks for no name, email address, date of birth, or any other identifier.</p>
+    <p>Nothing. There is no account, no sign-in, no registration, and no profile. The app asks for no name, email address, phone number, or any other identifier.</p>
+    <p>The one thing you can tell it about yourself is your age and sex, and only if you ask it to estimate your maximum heart rate for the zone display. That is optional, stays on the phone, and is described under <a href="#zones">Heart rate zones</a> below.</p>
     <p>It contains no analytics, no crash reporting, no advertising, and no third-party software development kits. It makes no network requests of any kind, because it does not request the <code>INTERNET</code> permission: Android itself will not let the app open a connection, whatever its code might attempt.</p>
     <p>Because nothing is collected, there are no third parties to disclose. No advertising network, analytics provider, cloud service, support platform, or other partner receives any information about you or your use of the app. In the Google Play Data safety section the app declares that no data is collected and none is shared.</p>
   </section>
@@ -39,6 +40,13 @@
     <h2>Your heart rate readings</h2>
     <p>Readings arrive from your Bluetooth sensor, appear on screen, and are written to files inside the app's own storage on your device. They stay there. They are never transmitted, never uploaded, and never seen by the developer or anyone else. The developer has no access to your readings, your session history, or your settings, and no technical means of obtaining them.</p>
     <p>Session history is likewise stored only on the device, as plain CSV files in the app's private directory, which no other app can read.</p>
+  </section>
+
+  <section id="zones">
+    <h2>Heart rate zones</h2>
+    <p>Version 3.0 added five training zones, derived from your maximum heart rate. They stay off until you switch them on. You set the maximum in one of two ways: type it in yourself, or let the app estimate it from your age and sex. Type it in and the app never asks for either.</p>
+    <p>If you do choose the estimate, the two figures feed one arithmetic formula on your own phone and are used for nothing else. They are written to a private settings file of their own, <code>ZonePrefs</code>, kept apart from the rest of your preferences so that the backup rules can exclude it by name. They are never transmitted, never used to profile you, and the developer has no way of seeing them. Change or clear them at any time in the same dialog, or switch back to entering a maximum directly.</p>
+    <p>When several consistent readings exceed your current maximum, the app raises it automatically. That measured value is kept in the same private file and goes nowhere either.</p>
   </section>
 
   <section>
@@ -50,14 +58,16 @@
     <h2>Exporting and sharing</h2>
     <p>You can export a session as a CSV or PDF file, or every session at once as a ZIP archive. The app prepares the file on your device and hands it to the standard Android share sheet, at which point <strong>you choose where it goes</strong>: Files, Drive, Gmail, a messaging app, or anywhere else installed on your phone. The file is passed as a temporary content URI, which grants the app you picked access to that one file and to nothing else.</p>
     <p>This is the only route by which your data can deliberately leave the device, and only you can open it. Once a file has been sent somewhere, it is governed by the privacy policy of whatever service or app you sent it to, not by this one. Choose deliberately.</p>
+    <p>An exported CSV carries the zone thresholds that were in force for that session, meaning the maximum heart rate and the five boundaries calculated from it. Your age and sex are not written to it, nor to the PDF, which shows the same zone lines you see on screen.</p>
     <p>Files prepared for export are held temporarily in the app's cache and removed automatically within a day.</p>
     <p>Importing works the same way in reverse. The app reads only the files you hand it through the system file picker; it requests no storage permission and cannot see the rest of your phone.</p>
   </section>
 
   <section>
     <h2>Android backup</h2>
-    <p>Android's own backup service is left switched on for this app. If you have backup enabled for your device, Android may copy the app's files, including your saved sessions and your settings, into the backup held in your own Google account. That is the operating system's mechanism, running under your account and against your storage quota. The developer has no access to it, no visibility into it, and no way to retrieve anything from it.</p>
-    <p>If you would rather it did not happen, turn backup off for this app in your phone's system settings, under Google, then Backup.</p>
+    <p>Android's own backup service is left switched on, but the health data is withheld from it. Your recorded sessions and your zone settings, age, sex, and the manual or measured maximum, are excluded from the daily backup into your Google account, on every Android version the app supports. Theme, text size, voice readout, and donation state are ordinary preference data and still restore after a reinstall.</p>
+    <p>On Android 12 and later, a direct phone-to-phone transfer is treated differently: it is local, you start it yourself when setting up the new device, and it carries everything, history included, so that replacing a phone is not a data-loss event. To move your history at any other time, use the ZIP export and import on the history screen.</p>
+    <p>If you would rather no backup happened at all, turn it off for this app in your phone's system settings, under Google, then Backup.</p>
   </section>
 
   <section>
@@ -67,7 +77,7 @@
 
   <section>
     <h2>Settings you enter</h2>
-    <p>Your text size, theme, and spoken-reading preferences are stored on the device so the app remembers them. Alongside them the app keeps a count of how often it has been opened and whether you have dismissed the support prompt, purely so that the prompt does not return too soon. All of it lives in the app's private settings file, is used for nothing but the features it configures, and never leaves the phone.</p>
+    <p>Your text size, theme, spoken-reading, and zone-line preferences are stored on the device so the app remembers them. Alongside them the app keeps a count of how often it has been opened and whether you have dismissed the support prompt, purely so that the prompt does not return too soon. All of it lives in the app's private settings file, is used for nothing but the features it configures, and never leaves the phone.</p>
   </section>
 
   <section>
@@ -128,7 +138,7 @@
 </main>
 
 <footer>
-  <p class="meta">Applies to Android version 2.9 &middot; Last updated 27 August 2026</p>
+  <p class="meta">Applies to Android version 3.0 &middot; Last updated 17 September 2026</p>
 </footer>
 
 </body>
