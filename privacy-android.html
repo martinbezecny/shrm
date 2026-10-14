@@ -18,7 +18,7 @@
 <main>
 
   <header class="hero">
-    <p class="eyebrow">Privacy policy &middot; Android version 3.0</p>
+    <p class="eyebrow">Privacy policy &middot; Android version 3.2</p>
     <h1>Nothing leaves<span>your phone.</span></h1>
     <p class="lede">This is short because there is almost nothing to describe.</p>
   </header>
@@ -40,6 +40,7 @@
     <h2>Your heart rate readings</h2>
     <p>Readings arrive from your Bluetooth sensor, appear on screen, and are written to files inside the app's own storage on your device. They stay there. They are never transmitted, never uploaded, and never seen by the developer or anyone else. The developer has no access to your readings, your session history, or your settings, and no technical means of obtaining them.</p>
     <p>Session history is likewise stored only on the device, as plain CSV files in the app's private directory, which no other app can read.</p>
+    <p>The live graph added in version 3.2 draws the last five minutes from a buffer held in memory while the app runs. It writes nothing beyond the session file already described, and the buffer is emptied when recording stops or the app closes.</p>
   </section>
 
   <section id="zones">
@@ -77,7 +78,7 @@
 
   <section>
     <h2>Settings you enter</h2>
-    <p>Your text size, theme, spoken-reading, and zone-line preferences are stored on the device so the app remembers them. Alongside them the app keeps a count of how often it has been opened and whether you have dismissed the support prompt, purely so that the prompt does not return too soon. All of it lives in the app's private settings file, is used for nothing but the features it configures, and never leaves the phone.</p>
+    <p>Your text size, theme, spoken-reading, live-graph, and zone-line preferences are stored on the device so the app remembers them. Alongside them the app keeps a count of how often it has been opened and whether you have dismissed the support prompt, purely so that the prompt does not return too soon. All of it lives in the app's private settings file, is used for nothing but the features it configures, and leaves the phone only through the Android backup described above.</p>
   </section>
 
   <section>
@@ -89,7 +90,9 @@
     <h2>Permissions</h2>
     <p>On Android 12 and later the app requests one thing: Nearby devices, meaning Bluetooth scanning and connection. It is used solely to discover and communicate with your heart rate sensor. The scan is declared with Android's <code>neverForLocation</code> flag, which tells the system that the app must not derive your location from the devices it finds.</p>
     <p>On Android 11 and older the system delivers Bluetooth scan results only to apps holding a location permission, and only while Location is switched on. The app therefore asks for it on those versions, and will tell you if Location is off. It does not read your location, does not store it, and does not use it for anything: the permission exists solely because older versions of Android make it the price of a Bluetooth scan.</p>
-    <p>No camera, microphone, contacts, photos, storage, body sensor, notification, or internet permission is requested.</p>
+    <p>Since version 3.1 the app keeps recording with the screen off or another app in front, through a foreground service that shows a persistent notification with the current heart rate and a Stop button. On Android 13 and later it asks for permission to post that notification. Refusing it hides the notification but does not stop recording. The notification is drawn by Android on your own phone; depending on your lock screen settings, your heart rate may be visible there while a session runs.</p>
+    <p>The app also declares the foreground service and wake lock permissions, which Android grants without asking. They keep the recording and its reconnection attempts alive while the screen is off and give the app no access to any data.</p>
+    <p>No camera, microphone, contacts, photos, storage, body sensor, or internet permission is requested.</p>
   </section>
 
   <section>
@@ -138,7 +141,7 @@
 </main>
 
 <footer>
-  <p class="meta">Applies to Android version 3.0 &middot; Last updated 17 September 2026</p>
+  <p class="meta">Applies to Android version 3.2 &middot; Last updated 14 October 2026</p>
 </footer>
 
 </body>
